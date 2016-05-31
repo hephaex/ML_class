@@ -312,9 +312,57 @@ regularization parameter λ의 변화에 대하여 오류 값을 그래프로 �
 
 ### Deciding Waht to do Next Revisited
 
-![07-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_07_DecidingWhatToTryNext_01.png)
-![07-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_07_DecidingWhatToTryNext_02.png)
-![07-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_07_DecidingWhatToTryNext_03.png)
+지금까지 배운 것을 정리해보자. 
+
+* Get more training examples
+ - 학습할 데이터를 늘린다.
+ - 데이터를 늘린다고 해서 항상 도움이 되지는 않는다.
+ - high variance를 개선하는데 효과적이다. 
+ - high bias에는 도움이 되지 않는다.
+ 
+* Try smaller sets of features
+ - 영향을 주는 요소를 줄여가 보자. 
+ - high variance를 개선하는데 효과적이다. 
+ - high bias에는 도움이 되지 않는다.
+
+* Try getting additional features
+ - 영향을 주는 요소가 부족할 수도 있다. 
+ - 어떨때 결과에 영향을 주는 요소를 늘려가는 것이다. 
+ - 가설함수가 간단했기 때문에 요소를 추가하면 할수록 가설함수의 오류를 줄여 준다. 
+ - high bias를 개선하는데 효과적이다. 
+ - 
+* Try adding polynominal features (ᆹᆻx1^2 , x2^2, x1*x2, ,,, etc)
+ - 가설 함수에 고차항을 추가 하는 것이다.
+ - high bias를 개선하는데 효과적이다. 
+ 
+* Try decreasing LAMDA (λ)
+ - regularization 항의 영향을 줄이는 것이다. 
+ - high bias를 개선하는데 효과적이다. 
+
+* Try increasing LAMDA (λ)
+ - regularization 항을 영향을 늘리는 것이다. 
+ - high variance를 개선하는데 효과적이다. 
+ 
+* ᆫneural network이 작은 경우 
+> ![07-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_07_DecidingWhatToTryNext_01.png)
+>
+> 적은 layer나 적은 hidden layer 인 경우
+> 네트워크는 under fitting이다. 
+> 계산량은 적다. 
+
+* neural network 가 많은 경우
+> ![07-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_07_DecidingWhatToTryNext_02.png)
+>
+> layer는 적으나, network수가 많다. 
+> over fit 된 것이다.
+> 교차 검증을 해가면서 layer 수를 늘리는 것이 효과적이다. 
+
+* neural hidden network가 많은 경우
+> ![07-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_07_DecidingWhatToTryNext_03.png)
+>
+> layer가 많다. 
+> over fit 된 것이다. 
+> 계산 량이 많기 때문에 regularization을 하는 것이 효과적이다. 
 
 ## Building a Spam Classifier
 
