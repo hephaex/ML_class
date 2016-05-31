@@ -231,13 +231,40 @@ High bias와 high variance 일 때 각각의 비용 함수를 통하여 오류�
  - ![04-07](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_07.png)
 
 ### Regulatization and Bias/Variacne
+Regularization LAMDA (λ) 에 대하여 under fit, just fit, over fit을 정리하면. 
 
+* under fit 
 ![05-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_05_RegularizationAndBiasVariance_01.png)
+
+* Just fit
 ![05-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_05_RegularizationAndBiasVariance_02.png)
+
+* Over fit
 ![05-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_05_RegularizationAndBiasVariance_03.png)
+
+regularization parameter λ 를 구하기 위해서 가설 함수, 비용함수를 세우고,
+![05-06](https://github.com/hephaex/ML_class/blob/master/week6/week6_05_RegularizationAndBiasVariance_06.png)
+
+각각의 λ에 대하여 비용함수 J(theta)를 최소화 하는 theta를 구할 수 있으며 이 때 요소 theta에 대한 교차함수의 비용함수를 정리할 수 있다. 
+![05-07](https://github.com/hephaex/ML_class/blob/master/week6/week6_05_RegularizationAndBiasVariance_07.png)
+
+비용함수를 학습을 위한 Jtrain, 교차검증을 위한 Jcv, 시험을 위한 Jtest라고 해서 각각을 정리해 보자. 
 ![05-04](https://github.com/hephaex/ML_class/blob/master/week6/week6_05_RegularizationAndBiasVariance_04.png)
+
+비용함수 J(θ)에 대하여 regulatization 으로 정리하고, 이것을 학습(train) 과 교차 검증 (cv)에 대한 비용항수로 정리해 보자. 
 ![05-05](https://github.com/hephaex/ML_class/blob/master/week6/week6_05_RegularizationAndBiasVariance_05.png)
 
+regularization parameter λ의 변화에 대하여 오류 값을 그래프로 그리면 다음처럼 그릴 수 있다. 
+![05-08](https://github.com/hephaex/ML_class/blob/master/week6/week6_05_RegularizationAndBiasVariance_08.png)
+
+* 작은 λ일 때 
+ - high variance 를 갖는다.
+ - over fit 
+ 
+* 큰 λ일 때
+ - hign bias 를 갖는다. 
+ - under fit 
+ 
 ### Learning Curves
 
 ![06-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_01.png)
