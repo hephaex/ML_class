@@ -266,14 +266,49 @@ regularization parameter λ의 변화에 대하여 오류 값을 그래프로 �
  - under fit 
  
 ### Learning Curves
+학습에 사용하는 데이터 수 m에 대하여 알아보자. 
 
-![06-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_01.png)
-![06-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_02.png)
-![06-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_03.png)
-![06-04](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_04.png)
-![06-05](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_05.png)
-![06-06](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_06.png)
-![06-07](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_07.png)
+학습에 대한 비용함수 Jtrain 과 교차 검증에 대한 비용함수 Jcv를 정리해 보자. 
+> ![06-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_01.png)
+
+학습에 사용하는 수가 늘어나면 늘어 날 수록 Jtrain 과 Jcv에 대한 오류값을 그래프로 그려보자. 
+> ![06-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_03.png)
+>
+> ![06-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_02.png)
+>
+> m이 작을 때: Jcv는 큰 오류 값을 가지며, Jtrain은 작은 오류 값을 가진다. 
+> 
+> m이 커질 수록: Jcv의 오류 값은 줄어들며, Jtrain의 오류 값은 커진다. 
+
+#### High bias
+> ![06-05](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_05.png)
+> 데이터에 대한 직선 이다. 
+> ![06-04](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_04.png)
+
+* Jtrain
+  - training error 는 작은 값에서 점차 커진다. 
+  - 학습 오류의 비용함수 training error 는 교차 오류의 비용함수와 가까워 진다. 
+  - 교차검증과 학습의 비용함수는 비슷한 값을 가진다. 
+
+* Jcv
+  - 데이터가 늘어남에 따라서 직선에 가까워 진다. 
+  - 많은 데이터를 사용한다고 해서 Jcv가 개선되는 것은 아니다. 
+
+#### high variance 
+> ![06-07](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_07.png)
+> 데이터에 대한 가설함수는 곡선이며 많은 부분을 잘 반영한다. 
+> ![06-06](https://github.com/hephaex/ML_class/blob/master/week6/week6_06_LearningCurves_06.png)
+
+* Jtrain
+  - m이 작을 때 training error 는 작다. 
+  - m이 늘어감에 따라 비용함수 값 또한 여전히 작다. 
+  - 매우 천천히 비용함수 값이 증가한다. 
+
+* Jcv
+  - 데이터가 늘어남에 따라서 비용함수 값은 줄어 들기는 하지만 크다. 
+  - 즉 데이터가 늘어난다고 해서 가설이 잘 맞는다고 할 수 없다. 
+  - 많은 데이터를 사용한다면 Jcv는  개선된다. 
+
 
 ### Deciding Waht to do Next Revisited
 
