@@ -185,15 +185,50 @@ logistic regression에서 오류는 가설h(θ)에 대한 결과 y의 오류 함
 좀더 좋은 방법론을 말한다면 데이터를 교차 평가와 시험으로 나누어서 평가하는 것이 더 좋다.
 
 ## Bias vs. Variance
+기계 학습을 하였는데 가설에 대하여 High bias, High variance, 그리고 just fit 으로 구분할 수있다. 
+어떤 때 high bias 라고 하고, 어떨때 high variance 라고 하며 어떨 때 just fit이라고 하는지 알아보자. 
 
 ### Diagnosing Bias vs. Variance
-![04-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_01.png)
-![04-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_02.png)
-![04-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_03.png)
+
+* High bias (underfit) d = 1
+> ![04-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_01.png)
+
+* Just Right ( best) d = 2
+> ![04-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_02.png)
+
+* High variance (overfit) d = 4
+> ![04-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_03.png)
+
+High bias와 high variance 일 때 각각의 비용 함수를 통하여 오류가 어떻게 변화하는지 그래프로 그려보자. 
 ![04-04](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_04.png)
+* d = 1: high bias
+ - Jcv의 오류 값은 크다. 
+ - Jtrain 의 오류 값은 크다. 
+ 
+* d = 4: high variance
+ - Jcv의 오류 값은 크다.
+ - Jtrain의 오류 값은 작다. 
+ - 하지만 계산량이 많다. 
+ 
+* d = 2: Just right
+ - Jcv의 오류값이 최소 값이다. 
+ - Jtrain의 값은 최소 값은 아니다. 
+ - 계산량은 적절하다. 
+
+
 ![04-05](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_05.png)
-![04-06](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_06.png)
-![04-07](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_07.png)
+* d가 너무 작을 때: high bias
+* d가 너무 클 때 : high variance 
+
+* high bias
+ - 학습 데이터를 잘 반영하여 맞추지 못한다. 
+ - ![04-06](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_06.png)
+
+* high variance
+ - 학습 데이터를 잘 반영한다. 
+ - 계산량이 많다. 
+ - 교차 검증을 하면 값이 커진다. 
+ - ![04-07](https://github.com/hephaex/ML_class/blob/master/week6/week6_04_DiagnosingBiasVSVariance_07.png)
 
 ### Regulatization and Bias/Variacne
 
