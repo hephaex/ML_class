@@ -129,15 +129,60 @@ logistic regression에서 오류는 가설h(θ)에 대한 결과 y의 오류 함
 
 시험에 대한 오류도 학습에 대한 오류를 계산하는 것과 똑같이 수식을 세우고 계산할 수 있다.
 ![02-06](https://github.com/hephaex/ML_class/blob/master/week6/week6_02_EvaluatingAHypothesis_06.png)
+ᆿ
+이것이 가설 함수를 평가하는 표준 기술이다. 
 
+### Model Selection adn Train /ᆶ ᆼValidation / Test Sets
+어떻게 해야만 regulatization parameter나 고차항(polynomial) 차수를 줄일 수 있을까?
 
-### Model Selection adn Train/ᆶᆼValidation/Test Sets
-![03-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_01.png)
-![03-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_02.png)
-![03-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_03.png)
-![03-04](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_04.png)
+가설 함수를 세우고 각 요소에 대하여 고차항으로 함수를 세웠다고 하자. 
+![03-00](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_00.png)
+요소가 1, 2, 3, ,,, , 10으로 늘어나는 만큼 고차항의 차수 또한 늘어난다. 
 ![03-05](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_05.png)
+
+고차항의 차수를 d라고 하자. 
+
+* d = 1 (linear)
+* d = 2 (quadratic)
+* d = 3 ...
+* ...
+* d = 10 
+
+각 요소에 대한 모델을 세워서 가설 함수를 만들수 있고, 이 것을 비용 함수 J를 이용해서 최적화된 값을 구할 수 있다. 
+
+* d = 1: Jtest(θ1)
+* d = 2: Jtest(θ2)
+* d = 3: Jtest(θ3)
+* ...
+* d = 10: Jtest(θ10)
 ![03-06](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_06.png)
+
+강의에서는 d = 5 일 때 가장 작은 비용 함수 값을 가진다고 하였다. 
+하지만 이것은 시험으로 사용한 데이터에 맞추어 진 것이지, 학습할 전체 대상에 맞추어 진 것이라고는 할 수 없다. 
+그래서 Cross Validation(ᆱCV)를 세워서 교차 평가한다. 
+
+* 수집한 데이터를 학습, 교차 평가, 시험으로 나누어 사용한다. 
+  * 1: 60% Traing set
+  * 2: 20% Cross validation set
+  * 3: 20% Test set
+![03-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_01.png)
+
+이렇게 나누어진 데이터에 대하여 각각 학습 오류, 교차 오류, 시험 오류를 계산 할 수 있고, 
+이 때 각각의 오류를 평가하기 위한 각각의 비용 함수를 사용한다. 
+
+* training set error 에 대한 cost function
+![03-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_02.png)
+
+* ᆱCross validation set 에 대한 cost function
+![03-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_03.png)
+
+* test set 에 대한 cost function
+![03-04](https://github.com/hephaex/ML_class/blob/master/week6/week6_03_ModelSelectionAndTrainingValidatingTest_04.png)
+
+
+많은 사람들이 기계학습을 실제 데이터로 학습 시키고 평가할 때 test set만 가지고 평가하여 
+결과 좋다면 OK한다. 이것은 많은 경우 좋은 결과를 가져오기도 하지만, 
+좀더 좋은 방법론을 말한다면 데이터를 교차 평가와 시험으로 나누어서 평가하는 것이 더 좋다.
 
 ## Bias vs. Variance
 
