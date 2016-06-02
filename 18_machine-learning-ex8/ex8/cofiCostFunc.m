@@ -39,20 +39,32 @@ Theta_grad = zeros(size(Theta));
 %        Theta_grad - num_users x num_features matrix, containing the 
 %                     partial derivatives w.r.t. to each element of Theta
 %
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    % compute the error, but only with movies that have been rated
+    error = (X * Theta' - Y) .^ 2;
+    J = 1/2 * sum(sum(R .* error));
+    
+    % and the regularization terms
+    reg_users = lambda / 2 * sum(sum((X .^ 2)));
+    reg_items = lambda / 2 * sum(sum((Theta .^ 2)));
+    
+    % add regularization
+    J = J + reg_users + reg_items;
+    
+    % now compute the gradients for X
+    for i = 1 : num_movies
+        idx = find(R(i, :) == 1);  % users who rated movie i
+        X_grad(i, :) = (X(i, :) * Theta(idx, :)' - Y(i, idx)) * Theta(idx, :);
+        X_grad(i, :) = X_grad(i, :) + lambda * X(i, :);
+    end
+    
+    % and for Theta
+    for j = 1 : num_users
+        idx = find(R(:, j) == 1);  % movies seen by user j     
+        Theta_grad(j, :) = (X(idx, :) * Theta(j, :)' - Y(idx, j))' * X(idx, :);
+        Theta_grad(j, :) = Theta_grad(j, :) + lambda * Theta(j, :);
+    end
+    
+    % =============================================================
 
 
 % =============================================================
