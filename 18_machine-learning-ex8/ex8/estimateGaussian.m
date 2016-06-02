@@ -22,7 +22,10 @@ sigma2 = zeros(n, 1);
 %
 
 
-
+    mu = mean(X);
+    subtract = bsxfun(@minus, X, mu);
+    squared = subtract .^ 2;
+    sigma2 = sum(squared) / m;
 
 
 
