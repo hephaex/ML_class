@@ -2,7 +2,7 @@
 * Neural Networks: Representation
 * progress: 5주차
 * 
-* date: 2016.05.0ᆨ3
+* date: 2016.05.10
 
 * Note:
  - 1주와 2주는 supervised learing 에서 Linear Regression(선형 회귀)을 공부했습니다.
