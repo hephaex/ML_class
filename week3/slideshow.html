@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="//s1.daumcdn.net/svc/attach/U0301/cssjs/tistory-web-blog/1461636606/static/css/mobile/T.m.css">
+    <script type="text/javascript" src="http://m1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-2.0.3.min.js"></script>
+    <title>포토뷰어 :: 사진은 권력이다</title>
+    <link rel="stylesheet" href="//s1.daumcdn.net/svc/attach/U0301/cssjs/tistory-web-blog/1461636606/static/css/mobile/ext/slideshow.css">
+</head>
+<body>
+<div id="gallerySlideshow" class="daum_layer_slideshow photo_view">
+    <div class="layer_body">
+        <h2 id="postTitle" class="tit_photo toggleTag">
+            <a href="javascript:;" id="entryLink" class="link_tit hide"><span id="postTitleforSlide">흑백 사진을 컬러 사진으로 자동 채색하는 신경망 기술 등장</span> <span class="ico_photo"></span></a>
+        </h2>
+        <div class="info_photo toggleTag">
+            <p id="exifInfo" class="txt_info"></p>
+            <div id="numberCaption" class="paging_photo">
+                <span class="screen_out">현재페이지</span><span class="num_page">0</span> <span class="txt_bar"> / </span>0
+            </div>
+					            <div class="bundle_etc">
+                <div class="etc_photo">
+                    <a href="javascript:;" id="commentLink" class="link_g link_reply"><span class="ico_photo">댓글</span></a>
+                </div>
+                <div class="etc_photo">
+                    <a href="javascript:;" id="snsOpenCloseBtn" class="link_g link_sns"><span class="ico_photo">sns 레이어 열기</span></a>
+                    <div class="sns_comm">
+                        <strong class="screen_out">SNS로 공유하기</strong>
+                        <ul class="list_sns">
+													<li id="kakaotalk">
+														<a href="javascript:;" class="link_sns"><span class="img_sns ico_sns_kt"></span>카톡</a>
+													</li>
+													<li id="kakaostory">
+														<a href="javascript:;" class="link_sns"><span class="img_sns ico_sns_ks"></span>카스</a>
+													</li>
+													<li id="twitter">
+														<a href="javascript:;" class="link_sns"><span class="img_sns ico_sns_twi"></span>트윗</a>
+													</li>
+													<li id="facebook">
+														<a href="javascript:;" class="link_sns"><span class="img_sns ico_sns_face"></span>페북</a>
+													</li>
+													<li id="kakaogroup">
+														<a href="javascript:;" class="link_sns"><span class="img_sns ico_sns_group"></span>그룹</a>
+													</li>
+													<li id="mail">
+														<a href="javascript:;" class="link_sns"><span class="img_sns ico_sns_mail"></span>메일</a>
+													</li>
+													<li id="band">
+														<a href="javascript:;" class="link_sns"><span class="img_sns ico_sns_band"></span>밴드</a>
+													</li>
+													<li id="copyUrl" class="lst">
+														<a href="javascript:;" class="link_sns"><span class="txt_url"><span class="txt_eng">URL</span>복사</span></a>
+													</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+						        </div>
+
+        <!-- 이미지 슬라이드 -->
+        <div class="wrap_photo" id="frameEl"></div>
+
+        <!-- 이전 다음 버튼 -->
+        <a href="javascript:;" id="prev-button" class="btn_move btn_prev"><span class="ico_photo">이전 사진 보기</span></a>
+        <a href="javascript:;" id="next-button" class="btn_move btn_next"><span class="ico_photo">다음 사진 보기</span></a>
+    </div>
+
+    <!-- 닫기 버튼 -->
+    <div class="toggleTag">
+        <a href="javascript:window.history.back()" id="closeBtn" class="btn_close"><span class="ico_photo">포토뷰어 닫기</span></a>
+    </div>
+    <div id="messageLayer" class="wrap_message" style="display: none;"><div class="layer_message">로딩중입니다...</div></div>
+</div>
+<input type="hidden" id="order" value="10">
+<input type="hidden" id="firstUrl" value="http://photohistory.tistory.com/m/post/16386/slideshow?">
+<script type="text/javascript" src="http://m1.daumcdn.net/svc/original/U03/cssjs/suggest/suggest-1.3.11.min.js"></script>
+<script type="text/javascript" src="//m1.daumcdn.net/svc/original/U03/cssjs/coco/coco-1.0.25.min.js"></script>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="//m1.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://m1.daumcdn.net/svc/original/U03/cssjs/slide/slide-1.2.13.standalone.min.js"></script>
+<script type="text/javascript" src="http://m1.daumcdn.net/svc/original/U03/cssjs/userAgent/userAgent-1.0.14.min.js"></script>
+<script type="text/javascript">
+    var slideImages = [];
+                    slideImages.push({'imgUrl' : 'http://cfile8.uf.tistory.com/image/246D1F395722B4050DDA0B', 'order' : '1', 'imgWidth' : '721', 'imgHeight' : '468', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile8.uf.tistory.com/image/2602D6435722B7B91FD9B6', 'order' : '3', 'imgWidth' : '600', 'imgHeight' : '464', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile1.uf.tistory.com/image/221C79435722B7BA12AE40', 'order' : '4', 'imgWidth' : '600', 'imgHeight' : '464', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile5.uf.tistory.com/image/24455E435722B7BC29138F', 'order' : '5', 'imgWidth' : '600', 'imgHeight' : '432', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile24.uf.tistory.com/image/241523435722B7BC259307', 'order' : '6', 'imgWidth' : '600', 'imgHeight' : '432', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile21.uf.tistory.com/image/2543CF435722B7BE294208', 'order' : '7', 'imgWidth' : '600', 'imgHeight' : '432', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile27.uf.tistory.com/image/2333E9435722B7BF24F54F', 'order' : '8', 'imgWidth' : '600', 'imgHeight' : '432', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile9.uf.tistory.com/image/2771E1435722B7C02734FD', 'order' : '9', 'imgWidth' : '432', 'imgHeight' : '600', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile24.uf.tistory.com/image/214FF8405722B7C01EA2A3', 'order' : '10', 'imgWidth' : '432', 'imgHeight' : '600', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile25.uf.tistory.com/image/22600A405722B8381D53D0', 'order' : '12', 'imgWidth' : '1834', 'imgHeight' : '722', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile4.uf.tistory.com/image/2453FB405722B7C20A0435', 'order' : '11', 'imgWidth' : '1200', 'imgHeight' : '1521', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+                    slideImages.push({'imgUrl' : 'http://cfile29.uf.tistory.com/image/2241763B5722B9502CD697', 'order' : '13', 'imgWidth' : '565', 'imgHeight' : '443', 'postId' : '16386', 'imgExif' : (false)? '' : ''});
+        
+    jQuery.noConflict();
+
+    /* 소셜쉐어 1.4.1 버전 */
+    var UNKNOWN_APP_ID = 0,
+            DEFAULT_APP_KEYWORD = '다음앱';
+
+		window.daumtools.ua = window.daumtools.userAgent();
+    var tools = window.daumtools;
+
+    var web2app = function (urlScheme, intentURI, appStoreURL, keyword, appId) {
+        daumtools.web2app({
+            urlScheme : urlScheme,
+            intentURI : intentURI,
+            storeURL : appStoreURL,
+            appName  : keyword || DEFAULT_APP_KEYWORD,
+            onUnsupportedEnvironment : function (context) {
+                window.location.href = 'http://search.daum.net/search?w=tot&DA=BESE&q=' + (keyword || DEFAULT_APP_KEYWORD);
+            },
+            willInvokeApp : function () {
+                var beacon = new Image();
+                beacon.src = 'http://tiara.daum.net/tiara.front/front/click/?referer=http%3A%2F%2Fdummy.daum.net%2F&url=http://dummy.daum.net/?t__nil_mob_minidaum=applink&nil_id=' + (appId || UNKNOWN_APP_ID);
+            }
+        });
+    };
+
+		function makeDataForKaKao(a, b, c) {
+			return {
+				appkey: a.appkey,
+				appver: "1.0",
+				apiver: "3.0",
+				linkver: "3.5",
+				objs: encodeURIComponent(JSON.stringify(a.objs || [{
+					objtype: "label",
+					text: c
+				}, {
+					objtype: "link",
+					text: b,
+					action: {
+						type: "web",
+						url: b
+					}
+				}]))
+			}
+		}
+
+		function queryStringify (a, c) {
+			var d = [];
+			if ("object" == typeof a)
+				for (var e in a)
+					if (a.hasOwnProperty(e)) {
+						var f = a[e];
+						d.push("object" == typeof f && f.length ? b(e, f, c || "&") : e + "=" + f.toString())
+					}
+			return d.join(c || "&")
+		}
+
+    var SocialService = {
+        'kakaotalk' : {
+            handler: function (context) {
+							var kakaoAPI = {
+								appkey: 'b8aef3eeb03fa312b81795386484f051',
+									objs: [
+									{
+										"objtype": "label",
+										"text": '[' + '티스토리' + ']' + '\r\n' + context.prefix
+									},
+									{
+										"objtype": "link",
+										"text": context.link,
+										"action": {
+											"type": "web",
+											"url": context.firstLink
+										}
+									}
+								]
+							};
+							if (tools.ua.platform === 'pc') {
+								alert('모바일 기기에서 이용 가능한 기능입니다.\r\n카카오톡이 설치된 스마트폰에서 이용해 주세요.');
+							} else {
+								var data = {
+									name: "카카오톡",
+									suffix: "이",
+									scheme: "kakaolink",
+									pkg: "com.kakao.talk",
+									uriPath: "send",
+									param: makeDataForKaKao(kakaoAPI, context.link, context.prefix),
+									storeURL: daumtools.ua.os.android ? "market://details?id=com.kakao.talk" : "itms-apps://itunes.apple.com/app/id362057947"
+								};
+								var urlScheme = data.scheme + "://" + data.uriPath + "?" + queryStringify(data.param),
+									intentURI = "intent://" + data.uriPath + "?" + queryStringify(data.param) + "#Intent;scheme=" + data.scheme + ";package=" + data.pkg + ";end",
+									storeURL = data.storeURL,
+									appName = data.name;
+
+								web2app(urlScheme, intentURI, storeURL, appName);
+							}
+            }
+        },
+        'twitter' : {
+            handler: function (context) {
+                durl(context.link, function (shortUrl) {
+                    var webIntent = 'https://twitter.com/intent/tweet?' +
+                            'url=' + encodeURIComponent(shortUrl) +
+                            '&text=' + encodeURIComponent(context.prefix);
+                    if (context.service_name) {
+                        webIntent += encodeURIComponent(' | ' + context.service_name);
+                    }
+                    window.location.href = webIntent;
+                });
+            }
+        },
+        'facebook' : {
+            handler: function (context) {
+                window.location.href = 'https://m.facebook.com/sharer.php?u=' + encodeURIComponent(context.link);
+            }
+        },
+        'mail' : {
+            handler: function (context) {
+                window.location.href = 'http://mail2.daum.net/hanmailex/mobile/MailLauncher.daum?opentype=compose&serviceId=socialshare&menubar=true' +
+                        '&SUBJECT=' + encodeURIComponent(context.prefix) +
+                        '&BODY=' + encodeURIComponent('"' + context.prefix + '"\r\n' + context.link) +
+                        '&LINK=' + encodeURIComponent(context.link);
+            }
+        },
+        'kakaostory' : {
+            handler: function (context) {
+                var uriPath = 'posting',
+                        param = 'post=' + encodeURIComponent(context.prefix + '\r\n' + context.link) +
+                                '&appid=' + encodeURIComponent(document.domain) +
+                                '&appver=1.0&apiver=1.0&',
+                        storeURL = tools.ua.os.android ? 'market://details?id=com.kakao.story' : 'itms-apps://itunes.apple.com/app/id486244601';
+
+                if (context.service_name) {
+                    param += '&appname=' + encodeURIComponent(context.service_name);
+                }
+
+                var urlScheme = getUrlScheme('storylink', uriPath, param, 'com.kakao.story'),
+                        intentUri = getIntentUri('storylink', uriPath, param, 'com.kakao.story');
+
+                if (tools.ua.platform === 'pc') {
+                    alert('모바일 기기에서 이용 가능한 기능입니다.\r\n카카오스토리가 설치된 스마트폰에서 이용해 주세요.');
+                } else {
+                    web2app(urlScheme, intentUri, storeURL, '카카오스토리');
+                }
+            }
+        },
+
+				'kakaogroup' : {
+					handler: function (context) {
+						var uriPath = 'posting',
+							param = 'post=' + encodeURIComponent(context.prefix + '\r\n' + context.link) +
+								'&appid=' + encodeURIComponent(document.domain) +
+								'&appver=1.0&apiver=1.0&',
+							storeURL = tools.ua.os.android ? "market://details?id=com.kakao.group" : "itms-apps://itunes.apple.com/app/id660168654";
+
+						if (context.service_name) {
+							param += '&appname=' + encodeURIComponent(context.service_name);
+						}
+
+						var urlScheme = getUrlScheme('kakaogrouplink', uriPath, param, 'coom.kakao.group'),
+							intentUri = getIntentUri('kakaogrouplink', uriPath, param, 'com.kakao.group');
+
+						if (tools.ua.platform === 'pc') {
+							alert('모바일 기기에서 이용 가능한 기능입니다.\r\n카카오그룹이 설치된 스마트폰에서 이용해 주세요.');
+						} else {
+							web2app(urlScheme, intentUri, storeURL, '카카오그룹');
+						}
+					}
+				},
+
+				'band': {
+					handler: function(context) {
+						var uriPath = "create/post",
+							param = 'text=' + encodeURIComponent(context.prefix + "\r\n" + context.link),
+							storeURL = tools.ua.os.android ? "market://details?id=com.nhn.android.band" : "itms-apps://itunes.apple.com/app/id542613198?mt=8";
+
+						var urlScheme = getUrlScheme('bandapp', uriPath, param, 'com.nhn.android.band'),
+							intentUri = getIntentUri('bandapp', uriPath, param, 'com.nhn.android.band');
+
+						if (tools.ua.platform === 'pc') {
+							alert('모바일 기기에서 이용 가능한 기능입니다.\r\n밴드가 설치된 스마트폰에서 이용해 주세요.');
+						} else {
+							web2app(urlScheme, intentUri, storeURL, '밴드');
+						}
+					}
+				},
+        'copyUrl' : {
+            handler: function (context) {
+                prompt("아래 URL을 전체 선택하여 복사하세요.", context.link);
+            }
+        }
+    };
+
+    function durl(url, callback) {
+        var jsonpURL = 'http://durl.me/api/Create.do?type=json&callback=durlComplete&longurl=' + encodeURIComponent(url);
+        var timeoutFallback = setTimeout(function () {
+            callback(url);
+        }, 3 * 1000);
+        window.durlComplete = function (result) {
+            if (!result.errorInfo) {
+                clearTimeout(timeoutFallback);
+                callback(result.shortUrl);
+            }
+        };
+        var script = document.createElement('script');
+        script.type = 'application/javascript';
+        script.src = jsonpURL;
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
+
+    function getUrlScheme (scheme, uriPath, param, pkg) {
+        return scheme + '://' + uriPath + '?' + param;
+    }
+
+    function getIntentUri (scheme, uriPath, param, pkg) {
+        return 'intent://' + uriPath + '?' + param + '#Intent;scheme=' + scheme + ';package=' + pkg + ';end';
+    }
+</script>
+<script type="text/javascript" src="//s1.daumcdn.net/svc/attach/U0301/cssjs/tistory-web-blog/1461636606/static/js/mobile/ext/slideshow.js"></script>
+</body>
+</html>
