@@ -233,6 +233,7 @@ ex) x1과 x2가 있을 때 x1은 2000의 범위, x2는 5의 범위라면.
 
 ## Normal Equation
 
+
 ![CPA_NE_01](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquation_01.png)
 ![CPA_NE_02](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquation_02.png)
 ![CPA_NE_03](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquation_03.png)
