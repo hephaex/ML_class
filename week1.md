@@ -1,5 +1,8 @@
 # Machine Learing
-* week #1
+* Welcom to Machine learing
+* progress: 1주차
+* 
+* date: 2016.04.05
 
 ## Welcome to Machine Learing!
 * Machine Learning 이란?
