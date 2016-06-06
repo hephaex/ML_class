@@ -26,4 +26,10 @@ Coursera Machine Learning
  
 * week6: 2016.05.31
  - Advice for applying machine learning
- - [week6 note](https://github.com/hephaex/ML_class/blob/master/week6.md)
+ - [week6-1 note](https://github.com/hephaex/ML_class/blob/master/week6-1.md)
+
+* week7: 2016.06.07
+ - Handing Skewed Data
+ - [week6-2 note](https://github.com/hephaex/ML_class/blob/master/week6-2.md)
+ - Support Venctor Machine
+ - [week6 note](https://github.com/hephaex/ML_class/blob/master/week7.md)
