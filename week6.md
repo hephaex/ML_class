@@ -330,7 +330,7 @@ regularization parameter λ의 변화에 대하여 오류 값을 그래프로 �
  - 어떨때 결과에 영향을 주는 요소를 늘려가는 것이다. 
  - 가설함수가 간단했기 때문에 요소를 추가하면 할수록 가설함수의 오류를 줄여 준다. 
  - high bias를 개선하는데 효과적이다. 
- - 
+
 * Try adding polynominal features (ᆹᆻx1^2 , x2^2, x1*x2, ,,, etc)
  - 가설 함수에 고차항을 추가 하는 것이다.
  - high bias를 개선하는데 효과적이다. 
@@ -364,46 +364,3 @@ regularization parameter λ의 변화에 대하여 오류 값을 그래프로 �
 > over fit 된 것이다. 
 > 계산 량이 많기 때문에 regularization을 하는 것이 효과적이다. 
 
-## Building a Spam Classifier
-
-### Prioritizing What to Work On
-
-![08-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_08_PrioritizingWhatToWorkOn_01.png)
-![08-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_08_PrioritizingWhatToWorkOn_02.png)
-![08-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_08_PrioritizingWhatToWorkOn_03.png)
-![08-04](https://github.com/hephaex/ML_class/blob/master/week6/week6_08_PrioritizingWhatToWorkOn_04.png)
-![08-05](https://github.com/hephaex/ML_class/blob/master/week6/week6_08_PrioritizingWhatToWorkOn_05.png)
-![08-06](https://github.com/hephaex/ML_class/blob/master/week6/week6_08_PrioritizingWhatToWorkOn_06.png)
-
-### Error Analysis
-
-
-
-## Handling Skewed Data
-
-### Error Metrics for Skwed Classes
-
-![10-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_10_ErroeMetrics4SkewedClass_01.png)
-![10-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_10_ErroeMetrics4SkewedClass_02.png)
-![10-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_10_ErroeMetrics4SkewedClass_03.png)
-
-### Trading Off Precision and Recall
-
-![11-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_11_TradingOffPrecisionAndRecall_01.png)
-![11-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_11_TradingOffPrecisionAndRecall_02.png)
-![11-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_11_TradingOffPrecisionAndRecall_03.png)
-![11-04](https://github.com/hephaex/ML_class/blob/master/week6/week6_11_TradingOffPrecisionAndRecall_04.png)
-![11-05](https://github.com/hephaex/ML_class/blob/master/week6/week6_11_TradingOffPrecisionAndRecall_05.png)
-![11-06](https://github.com/hephaex/ML_class/blob/master/week6/week6_11_TradingOffPrecisionAndRecall_06.png)
-![11-07](https://github.com/hephaex/ML_class/blob/master/week6/week6_11_TradingOffPrecisionAndRecall_07.png)
-![11-08](https://github.com/hephaex/ML_class/blob/master/week6/week6_11_TradingOffPrecisionAndRecall_08.png)
-![11-09](https://github.com/hephaex/ML_class/blob/master/week6/week6_11_TradingOffPrecisionAndRecall_09.png)
-
-## Using Large Data Sets
-
-### Data For Machine Learning
-
-![12-01](https://github.com/hephaex/ML_class/blob/master/week6/week6_12_DataForMachineLearning_01.png)
-![12-02](https://github.com/hephaex/ML_class/blob/master/week6/week6_12_DataForMachineLearning_02.png)
-![12-03](https://github.com/hephaex/ML_class/blob/master/week6/week6_12_DataForMachineLearning_03.png)
-![12-04](https://github.com/hephaex/ML_class/blob/master/week6/week6_12_DataForMachineLearning_04.png)
