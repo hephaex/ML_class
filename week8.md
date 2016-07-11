@@ -2,7 +2,7 @@
 * Support Vector Machine
 * progress: 8 주차
 *
-* date: 2016.07.05
+* date: 2016.07.11
 * 장소: 
 
 * Note:
