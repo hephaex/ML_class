@@ -2,7 +2,7 @@
 Coursera Machine Learning 
 
 * week12: 2016.08.02
- - anomal detection
+ - anomal detection 
  - [week12 note](http://www.slideshare.net/hephaex/emt-machine-learning-12th-weeks-anomaly-detection)
 
 * week7: 2016.06.07
