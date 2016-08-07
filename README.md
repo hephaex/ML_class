@@ -1,5 +1,7 @@
-# ML_class
+# 온수당 EML
+온수당 머신 러닝
 Coursera Machine Learning 
+
 
 * week12: 2016.08.02
  - anomal detection 
